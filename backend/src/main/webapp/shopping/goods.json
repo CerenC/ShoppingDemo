@@ -1,0 +1,33 @@
+{
+  "lastUpdate": "2017-06-16",
+  "goods": [
+    {
+      "name": "Peas",
+      "price": "0.95",
+      "unit": "bag",
+      "currency": "EUR",
+      "iconUrl": "https://data-strg.appspot.com/shopping/img/peas_02.png"
+    },
+    {
+      "name": "Eggs",
+      "price": "2.1",
+      "unit": "dozen",
+      "currency": "EUR",
+      "iconUrl": "https://data-strg.appspot.com/shopping/img/eggs_02.png"
+    },
+    {
+      "name": "Beans",
+      "price": "0.73",
+      "unit": "can",
+      "currency": "EUR",
+      "iconUrl": "https://data-strg.appspot.com/shopping/img/beans_02.png"
+    },
+    {
+      "name": "Milk",
+      "price": "1.14",
+      "unit": "bottle",
+      "currency": "EUR",
+      "iconUrl": "https://data-strg.appspot.com/shopping/img/milk_02.png"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Shopping Demo</string>
+    <string name="loading">Loading...</string>
+    <string name="goods_detail">%1$s %2$s per %3$s</string>
+    <string name="goods_amount">Total %1$s %2$s (%3$s items)</string>
+    <string name="eur">EUR</string>
+    <string name="basket">Shopping</string>
+    <string name="basket_detail">My Basket</string>
+    <string name="total_amount">%1$s %2$s</string>
+    <string name="total_amount_text">Total Amount</string>
+    <string name="no_good_selected_warning">Please select a good!</string>
+    <string name="confirm">Confirm</string>
+
+
+</resources>

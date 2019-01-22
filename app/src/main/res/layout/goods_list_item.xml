@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="item"
+            type="com.crn.shopping.model.GoodsItem" />
+        <variable
+            name="currencyItem"
+            type="com.crn.shopping.datasource.local.entity.CurrencyEntity" />
+        <variable
+            name="callback"
+            type="com.crn.shopping.ui.adapter.GoodsAdapter.ClickCallback" />
+    </data>
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:elevation="8dp"
+            android:background="@color/colorPrimary">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary">
+                <Button
+                    android:id="@+id/basketButton"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/ic_shopping_cart_grey"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="top|center"
+                    app:visibleGone="@{item.count}">
+                </Button>
+                <TextView
+                    android:id="@+id/badgeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/basketButton"
+                    android:layout_alignRight="@id/basketButton"
+                    android:text="@{String.valueOf(item.count)}"
+                    android:gravity="center"
+                    android:elevation="3dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/badge_circle"
+                    app:visibleGone="@{item.count}"/>
+                <ImageView
+                    android:id="@+id/iconImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/goods_cover_height"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="false"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/ic_placeholder"
+                    app:iconUrl="@{item.iconUrl}"/>
+
+                <TextView
+                    android:id="@+id/nameTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iconImageView"
+                    android:paddingLeft="@dimen/goods_title_padding"
+                    android:paddingRight="@dimen/goods_title_padding"
+                    android:paddingTop="@dimen/goods_title_padding"
+                    style="@style/TextStyle"
+                    android:text="@{item.name}"
+                    android:textColor="@android:color/white"
+                    android:background="@android:color/transparent"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/infoTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/nameTextView"
+                    android:paddingLeft="@dimen/goods_title_padding"
+                    android:paddingRight="@dimen/goods_title_padding"
+                    style="@style/TextStyle.Small"
+                    android:textColor="@android:color/white"
+                    android:background="@android:color/transparent"
+                    app:goodsItem="@{item}"
+                    app:currencyItem="@{currencyItem}"/>
+                <ImageView
+                    android:id="@+id/removeImageView"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:clickable="true"
+                    android:layout_below="@id/infoTextView"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/ic_remove_circle"
+                    android:padding="@dimen/goods_title_padding"
+                    android:background="@android:color/transparent"
+                    android:onClick="@{() -> callback.onDecrease(item,removeImageView)}"/>
+
+                <ImageView
+                    android:id="@+id/addImageView"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:clickable="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/infoTextView"
+                    android:src="@drawable/ic_add_circle"
+                    android:background="@android:color/transparent"
+                    android:padding="@dimen/goods_title_padding"
+                    android:onClick="@{() -> callback.onIncrease(item,addImageView)}"/>
+
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+</layout>
